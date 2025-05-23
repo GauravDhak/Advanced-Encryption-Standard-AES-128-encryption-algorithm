@@ -59,15 +59,10 @@ The AES encryption process follows these key steps:
 
 
 # 🧱 Block Diagram
-
-![aes-image](https://github.com/user-attachments/assets/0aa90b01-72ec-4775-a430-11750b8f5e4c)
-
+![AES-block-encryption-in-CBC-mode](https://github.com/user-attachments/assets/2f712a8a-d592-4d3f-b384-46722f693ff8)
 # 🧱 Output Waveform 
 
-![Screenshot 2025-04-20 101631](https://github.com/user-attachments/assets/0eb134f1-83d0-4be4-94af-292432dd4143)
-
-
-![Screenshot 2025-04-20 103644](https://github.com/user-attachments/assets/9888871a-bc86-4490-9c6e-2aa807190aef)
+![Screenshot 2025-05-19 005056](https://github.com/user-attachments/assets/41f88e2d-6c00-4814-b352-8c268738d262)
 
 ## 🚀 Performance Matrix: AES-128 FPGA vs. Software Implementation
 
@@ -126,3 +121,79 @@ The AES encryption process follows these key steps:
 - 🔐 Can be hardened against **Side-Channel Attacks** like DPA and Timing Attacks.
 - 🧱 Implementation-specific **obfuscation** and custom logic adds another layer of protection.
 
+
+
+---
+
+## 🧩 Netlist Diagram
+
+A synthesized netlist representation of the AES design showing the interconnection of all submodules.
+
+
+![Screenshot 2025-05-20 002416](https://github.com/user-attachments/assets/7b85e467-14d4-486e-ab08-608219eaae07)
+
+---
+
+## 💻 FPGA Implementation View
+
+Post-synthesis placement and routing view from Vivado (Zynq ZCU104 board).
+
+![Screenshot 2025-05-19 172331](https://github.com/user-attachments/assets/188b24cf-bb20-4f8b-86aa-9c6f57516d8c)
+
+---
+
+## 🔌 Final Hardware Setup
+
+AES encryption system deployed and running on the ZCU104 board.
+
+![dais-fpga-board-1024x768](https://github.com/user-attachments/assets/b53716d5-c9b0-4fa7-b74c-6c2ad826c0ec)
+
+---
+
+## 🧪 Functional Test Summary
+
+| Test Case | Input Data (Hex)             | Encrypted Output               | IV Used | Latency (cycles) | Status |
+|-----------|-------------------------------|--------------------------------|---------|------------------|--------|
+| TC01      | `0x00112233445566778899AABBCCDDEEFF` | `0x69C4E0D86A7B0430D8CDB78070B4C55A` | Yes     | 12               | ✅ Pass |
+| TC02      | `0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF` | `0xA1B2C3D4E5F67890123456789ABCDEF0` | Yes     | 12               | ✅ Pass |
+| TC03      | `0x00000000000000000000000000000000` | `0x66E94BD4EF8A2C3B884CFA59CA342B2E` | Yes     | 12               | ✅ Pass |
+| ...       | ...                           | ...                            | ...     | ...              | ...    |
+
+> ⏱️ *Average Encryption Latency:* ~12 clock cycles  
+> 🔐 *Each encryption cycle uses a randomized IV for enhanced security.*
+
+---
+
+## 📊 Final Performance Matrix
+
+| **Metric**             | **Value** | **Remarks**                                               |
+|------------------------|-----------|-----------------------------------------------------------|
+| LUTs                  | 5,686     | Used for implementing combinational logic                |
+| Flip-Flops (FFs)      | 3,267     | Used for sequential logic and control/data pipelining    |
+| I/O Ports             | 644       | High due to 128-bit wide data and control interface      |
+| Net Connections       | 1,658     | Indicates interconnect complexity within the design      |
+| Clock Period          | ~10.5 ns  | Achievable frequency ≈ **94.8 MHz**                      |
+| Cell Count            | 767       | Total number of logic cells utilized                     |
+
+---
+
+## 🤝 Acknowledgments
+
+This project was driven by self-initiative and independent learning.  
+Explored interdisciplinary domains including **Post-Quantum Cryptography (PQC)**, **Classical Cryptography**, and **Hardware Security**,
+which contributed significantly to the development and understanding of secure AES encryption on FPGA.
+---
+
+## 🧠 Author
+
+**GAURAV DHAK**  
+B.Tech in Electronics System Engineering, Specialization in VLSI  
+NIELIT Aurangabad  
+Academic Year: 2024–2025
+## 📧 Contact
+
+Feel free to reach out for discussions or collaborations in the domain of **VLSI**, **FPGA**, or **Cryptographic Hardware** Design.
+
+📩 gauravdhak1301@gmail.com
+
+---
