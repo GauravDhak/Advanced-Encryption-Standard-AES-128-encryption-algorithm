@@ -11,9 +11,9 @@ module shift_rows (
     endgenerate
 
     assign state_out = {
-        s[0],  s[5],  s[10], s[15],
-        s[4],  s[9],  s[14], s[3],
-        s[8],  s[13], s[2],  s[7],
-        s[12], s[1],  s[6],  s[11]
+        s[0],  s[5],  s[10], s[15],  // unchange row 
+        s[4],  s[9],  s[14], s[3],  // left shift by one
+        s[8],  s[13], s[2],  s[7],  // left shift by two
+        s[12], s[1],  s[6],  s[11]  // left shift by three 
     };
 endmodule
