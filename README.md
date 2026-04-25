@@ -172,7 +172,7 @@ AES encryption system deployed and running on the ZCU104 board.
 | Flip-Flops (FFs)      | 3,267     | Used for sequential logic and control/data pipelining    |
 | I/O Ports             | 644       | High due to 128-bit wide data and control interface      |
 | Net Connections       | 1,658     | Indicates interconnect complexity within the design      |
-| Clock Period          | ~10.5 ns  | Achievable frequency ≈ **94.8 MHz**                      |
+| Clock Period          | ~10.5 ns  | Achievable frequency ≈ **95.24 MHz**                      |
 | Cell Count            | 767       | Total number of logic cells utilized                     |
 
 ---
