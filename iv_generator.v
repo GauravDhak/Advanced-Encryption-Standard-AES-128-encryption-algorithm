@@ -15,7 +15,7 @@ module galois_lfsr_128bit (
         else if (load_seed)
             iv <= seed;
         else if (enable) begin
-            feedback = iv[127]; // MSB as feedback
+            feedback <= iv[127]; // MSB as feedback
 
             iv[127:1] <= iv[126:0];  // Shift left
             iv[0] <= feedback;       // Insert feedback at LSB
